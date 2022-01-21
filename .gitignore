@@ -63,8 +63,11 @@ Packages/packages-lock.json
 
 ProjectSettings/UnityConnectSettings.asset
 
+ProjectSettings/SceneTemplateSettings.json
+
 UserSettings/Layouts/
 
 UserSettings/EditorUserSettings.asset
 
+UserSettings/
 UserSettings/Search.settings
