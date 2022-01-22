@@ -83,6 +83,7 @@ MonoBehaviour:
   entryPoint: {x: 0, y: 0}
   isPlayerMoving: {fileID: 11400000, guid: 08bca08d619a51e48bbacc15f2f67543, type: 2}
   playerMoveTarget: {fileID: 11400000, guid: 62233ceda9c32c74b906a78a7ca10340, type: 2}
+  fieldSize: {x: 16, y: 16}
 --- !u!114 &1759753132862332469
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 2729620899200763082}
   - component: {fileID: 6895127726114788758}
   - component: {fileID: 8424117304428232075}
+  - component: {fileID: 1946161842}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -248,3 +249,24 @@ MonoBehaviour:
   currentPositionRef: {fileID: 11400000, guid: 9c882db4e00b9be4298da3f4f3a64413, type: 2}
   currentDirectionRef: {fileID: 11400000, guid: 244f1eef5f17524459612d4f61684ae1, type: 2}
   grabbedObjectRef: {fileID: 11400000, guid: c10cafd2a69e6d049b23cd176025d5a6, type: 2}
+--- !u!50 &1946161842
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6980377989839337043}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
