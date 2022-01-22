@@ -19,6 +19,5 @@ public class VisibilityChange : MonoBehaviour
 	private void Watcher_OnWorldChange(World _world)
 	{
 		renderer.enabled = activeDuring == _world;
-		Debug.LogFormat("{0} set renderer to {1}", name, renderer.enabled);
 	}
 }
