@@ -9,6 +9,8 @@ public class GridSystem : MonoBehaviour
 	[SerializeField] private RuntimeBool isPlayerMoving;
 	[SerializeField] private RuntimeInt2 playerMoveTarget;
 
+	public Vector2Int fieldSize;
+
 	public Vector3 Origin
 		=> myOriginOverride ? myOriginOverride.position : transform.position;
 
@@ -24,7 +26,7 @@ public class GridSystem : MonoBehaviour
 
 		foreach(var pos in targetPositions)
 		{
-			if (Physics2D.OverlapCircle(ToWorldPos(pos), 0.4f * tileSize))
+			if (CollisionTest(pos))
 				return false;
 		}
 
@@ -33,16 +35,25 @@ public class GridSystem : MonoBehaviour
 
 	public T GetComponentAt<T>(Vector2Int _gridPos) where T : Component
 	{
-		var collider = Physics2D.OverlapCircle(ToWorldPos(_gridPos), 0.4f * tileSize);
+		var collider = CollisionTest(_gridPos);
 		if (!collider)
 		{
-			Debug.LogFormat("Northing at {0}", _gridPos);
+			Debug.LogFormat("Nothing at {0}", _gridPos);
 			return default;
 		}
 
 		Debug.LogFormat("Getting Component {0} on {1}", typeof(T).Name, collider.gameObject.name);
 
 		return collider.GetComponent<T>();
+	}
+
+	private Collider2D CollisionTest(Vector2Int _position)
+	{
+		var collider = Physics2D.OverlapCircle(ToWorldPos(_position), 0.4f * tileSize);
+		if (!collider || collider.isTrigger)
+			return default;
+
+		return collider;
 	}
 
 	private void OnDrawGizmos()
@@ -52,5 +63,13 @@ public class GridSystem : MonoBehaviour
 
 		Gizmos.color = Color.green;
 		Gizmos.DrawSphere(ToWorldPos(entryPoint), 0.125f);
+
+		for(int x = 0; x < fieldSize.x; ++x)
+		{
+			for(int y = 0; y < fieldSize.y; ++y)
+			{
+				Gizmos.DrawWireCube(ToWorldPos(new Vector2Int(x, y)), Vector3.one * tileSize);
+			}
+		}
 	}
 }

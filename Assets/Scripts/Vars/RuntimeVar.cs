@@ -21,7 +21,8 @@ public class RuntimeVar<T> : ScriptableObject, IEquatable<T>, IEquatable<Runtime
 			return;
 
 		Value = _value;
-		OnValueChanged?.Invoke(_value);
+		if (OnValueChanged != default)
+			OnValueChanged(_value);
 	}
 
 	public bool Equals(T _other)
