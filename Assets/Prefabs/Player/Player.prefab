@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 8879010761770014613}
   - component: {fileID: 2729620899200763082}
   - component: {fileID: 6895127726114788758}
+  - component: {fileID: 8424117304428232075}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -101,6 +102,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputs: {fileID: -944628639613478452, guid: ac5f7595071cfd042bcbfbf9ccdde185, type: 3}
+  currentMoveSpeed: {fileID: 11400000, guid: 358afaba36f7c91439f736705e9b4561, type: 2}
+  normalSpeed: 5
+  dragSpeed: 2.5
 --- !u!114 &8879010761770014613
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -118,7 +122,7 @@ MonoBehaviour:
   PositionRef: {fileID: 11400000, guid: 9c882db4e00b9be4298da3f4f3a64413, type: 2}
   DirectionRef: {fileID: 11400000, guid: 244f1eef5f17524459612d4f61684ae1, type: 2}
   MoveTargetRef: {fileID: 11400000, guid: 62233ceda9c32c74b906a78a7ca10340, type: 2}
-  moveSpeed: 5
+  MoveSpeedRef: {fileID: 11400000, guid: 358afaba36f7c91439f736705e9b4561, type: 2}
 --- !u!114 &2729620899200763082
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -159,3 +163,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &8424117304428232075
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6980377989839337043}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db24cd984f1b24c439a89f04616ae906, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentGrid: {fileID: 11400000, guid: 562557d0f35d9c04292d8ff49c2dde4d, type: 2}
+  currentPositionRef: {fileID: 11400000, guid: 9c882db4e00b9be4298da3f4f3a64413, type: 2}
+  currentDirectionRef: {fileID: 11400000, guid: 244f1eef5f17524459612d4f61684ae1, type: 2}
+  grabbedObjectRef: {fileID: 11400000, guid: c10cafd2a69e6d049b23cd176025d5a6, type: 2}

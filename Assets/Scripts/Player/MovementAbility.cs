@@ -13,10 +13,10 @@ public class MovementAbility : MonoBehaviour, IMovable
 	[SerializeField] private RuntimeInt2 DirectionRef;
 	[SerializeField] private RuntimeInt2 MoveTargetRef;
 
-	[SerializeField] private float moveSpeed = 5.0f;
+	[SerializeField] private RuntimeFloat MoveSpeedRef;
 
 	private bool CanMoveAtAll
-		=> !player.IsLocked && gridRef && isMovingRef && PositionRef && DirectionRef && MoveTargetRef;
+		=> !player.IsLocked && gridRef && isMovingRef && PositionRef && DirectionRef && MoveTargetRef && MoveSpeedRef;
 
 	public Vector2Int Position
 		=> PositionRef ? PositionRef.Value : Vector2Int.zero;
@@ -35,7 +35,7 @@ public class MovementAbility : MonoBehaviour, IMovable
 		if (!CanMoveAtAll)
 			return;
 
-		if(isMovingRef.Value)
+		if (isMovingRef.Value)
 		{
 			DoMove();
 			return;
@@ -46,11 +46,11 @@ public class MovementAbility : MonoBehaviour, IMovable
 		SetMovement(input);
 	}
 
-	private void DoMove() 
+	private void DoMove()
 	{
 		Vector3 targetWorldPos = gridRef.Value.ToWorldPos(MoveTargetRef.Value);
 
-		transform.position = Vector3.MoveTowards(transform.position, targetWorldPos, moveSpeed * Time.deltaTime);
+		transform.position = Vector3.MoveTowards(transform.position, targetWorldPos, MoveSpeedRef.Value * Time.deltaTime);
 
 		if (Vector3.Distance(transform.position, targetWorldPos) < Vector3.kEpsilon)
 		{
@@ -61,15 +61,20 @@ public class MovementAbility : MonoBehaviour, IMovable
 
 	private void SetDirection(Vector2Int _input)
 	{
-		if(player.CanChangeDirection)
-			DirectionRef.SetValue(_input);
+		if (!player.CanChangeDirection)
+			return;
+
+		if (_input == Vector2Int.zero)
+			return;
+
+		DirectionRef.SetValue(_input);
 	}
 
-	private void SetMovement(Vector2Int _input) 
+	private void SetMovement(Vector2Int _input)
 	{
 		if (gridRef.Value.CanShapeMove(player.Shape, _input))
 			player.Shape.Move(_input);
-	} 
+	}
 
 	public void SetTargetPosition(Vector2Int _targetPosition)
 	{

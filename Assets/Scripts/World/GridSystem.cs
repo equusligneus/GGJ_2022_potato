@@ -35,7 +35,12 @@ public class GridSystem : MonoBehaviour
 	{
 		var collider = Physics2D.OverlapCircle(ToWorldPos(_gridPos), 0.4f * tileSize);
 		if (!collider)
+		{
+			Debug.LogFormat("Northing at {0}", _gridPos);
 			return default;
+		}
+
+		Debug.LogFormat("Getting Component {0} on {1}", typeof(T).Name, collider.gameObject.name);
 
 		return collider.GetComponent<T>();
 	}
