@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [RequireComponent(typeof(Player))]
-public class MovementAbility : MonoBehaviour
+public class MovementAbility : MonoBehaviour, IMovable
 {
 	private Player player;
 
@@ -18,8 +18,17 @@ public class MovementAbility : MonoBehaviour
 	private bool CanMoveAtAll
 		=> !player.IsLocked && gridRef && isMovingRef && PositionRef && DirectionRef && MoveTargetRef;
 
+	public Vector2Int Position
+		=> PositionRef ? PositionRef.Value : Vector2Int.zero;
+
+	public bool IsMoving
+		=> isMovingRef && isMovingRef.Value;
+
 	public void Start()
-		=> player = GetComponent<Player>();
+	{
+		player = GetComponent<Player>();
+		player.Shape.Add(this);
+	}
 
 	private void Update()
 	{
@@ -58,16 +67,13 @@ public class MovementAbility : MonoBehaviour
 
 	private void SetMovement(Vector2Int _input) 
 	{
-		Vector2Int target = MoveTargetRef.Value + _input;
-		if(CanMove(_input))
-		{
-			isMovingRef.SetValue(true);
-			MoveTargetRef.SetValue(target);
-		}
+		if (gridRef.Value.CanShapeMove(player.Shape, _input))
+			player.Shape.Move(_input);
 	} 
 
-	private bool CanMove(Vector2Int _direction)
+	public void SetTargetPosition(Vector2Int _targetPosition)
 	{
-		return true;
+		isMovingRef.SetValue(true);
+		MoveTargetRef.SetValue(_targetPosition);
 	}
 }

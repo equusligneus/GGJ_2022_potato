@@ -3,13 +3,13 @@ using UnityEngine;
 [RequireComponent(typeof(Player))]
 public class WorldSwitchAbility : MonoBehaviour
 {
-    [SerializeField] RuntimeBool isInTransit = default;
-    [SerializeField] RuntimeWorld currentWorld = default;
+    [SerializeField] RuntimeBool isInTransitRef = default;
+    [SerializeField] RuntimeWorld currentWorldRef = default;
 
 	private Player player;
 
 	public bool CanChangeWorld
-		=> currentWorld != default && isInTransit != default && !isInTransit.Value;
+		=> currentWorldRef && isInTransitRef && !isInTransitRef.Value;
 
 	private void Start()
 	{
@@ -31,7 +31,7 @@ public class WorldSwitchAbility : MonoBehaviour
 
 		// Do checking here!!!
 
-		SetWorld(currentWorld.Value == World.Default ? World.Alternative : World.Default);
+		SetWorld(currentWorldRef.Value == World.Default ? World.Alternative : World.Default);
 	}
 
 	void SetWorld(World _world)
@@ -39,6 +39,6 @@ public class WorldSwitchAbility : MonoBehaviour
         if (!CanChangeWorld)
             return;
 
-        currentWorld.SetValue(_world);
+        currentWorldRef.SetValue(_world);
 	}
 }
