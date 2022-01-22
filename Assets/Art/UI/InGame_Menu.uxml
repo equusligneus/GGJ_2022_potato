@@ -1,0 +1,8 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/Art/UI/UI_Art_Style.uss?fileID=7433441132597879392&amp;guid=1e42ff398bc90ee479d8e9b030087694&amp;type=3#UI_Art_Style" />
+    <ui:VisualElement style="align-items: center; justify-content: center;">
+        <ui:Button text="I&apos;m not done, let&apos;s get it on!" display-tooltip-when-elided="true" name="btn_resume" />
+        <ui:Button text="Exit venue, enter menue" display-tooltip-when-elided="true" name="btn_menu" style="-unity-font: url(&apos;project://database/Assets/Art/Fonts/Terminus_8x8_Monospaced.ttf?fileID=12800000&amp;guid=e351b77f2f94d0e48815cb2dd54eeece&amp;type=3#Terminus_8x8_Monospaced&apos;);" />
+        <ui:Button text="Game is sh#t so I&apos;mma quit" display-tooltip-when-elided="true" name="btn_quit" />
+    </ui:VisualElement>
+</ui:UXML>

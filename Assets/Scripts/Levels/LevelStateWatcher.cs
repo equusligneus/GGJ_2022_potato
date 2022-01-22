@@ -10,10 +10,10 @@ public class LevelStateWatcher : MonoBehaviour
 	public event Action<World> OnWorldChange;
 	public event Action<Level> OnLevelChange;
 	public bool IsInLevel
-		=> currentLevel != default && currentLevel.Equals(myLevel);
+		=> currentLevel && currentLevel.Equals(myLevel);
 
 	public World CurrentWorld
-		=> (IsInLevel && currentWorld != default) ? currentWorld.Value : World.Invalid;
+		=> (IsInLevel && currentWorld) ? currentWorld.Value : World.Invalid;
 
 
 	public void Start()
@@ -49,11 +49,7 @@ public class LevelStateWatcher : MonoBehaviour
 
 	private void Trigger(World _value)
 	{
-		Debug.LogFormat("Invoking change to {0}", _value);
 		if (OnWorldChange != default)
-		{
-			Debug.LogFormat("Invoking change to {0}", _value);
 			OnWorldChange(_value);
-		}
 	}
 }
