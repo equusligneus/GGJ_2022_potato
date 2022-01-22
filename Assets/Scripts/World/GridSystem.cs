@@ -64,6 +64,7 @@ public class GridSystem : MonoBehaviour
 		Gizmos.color = Color.green;
 		Gizmos.DrawSphere(ToWorldPos(entryPoint), 0.125f);
 
+		Gizmos.color = Color.grey;
 		for(int x = 0; x < fieldSize.x; ++x)
 		{
 			for(int y = 0; y < fieldSize.y; ++y)
