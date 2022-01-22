@@ -3,7 +3,7 @@ using UnityEngine;
 public class GridSystem : MonoBehaviour
 {
 	[SerializeField] private Transform myOriginOverride;
-	[SerializeField] private Vector2 tileSize;
+	[SerializeField] private float tileSize;
 	[SerializeField] private Vector2Int entryPoint;
 
 	[SerializeField] private RuntimeBool isPlayerMoving;
@@ -12,10 +12,33 @@ public class GridSystem : MonoBehaviour
 	public Vector3 Origin
 		=> myOriginOverride ? myOriginOverride.position : transform.position;
 
-	public Vector3 ToWorldPos(Vector2Int _gridPos)
-		=> Origin + new Vector3(_gridPos.x * tileSize.x, _gridPos.y * tileSize.y, 0f);
+	public Vector2Int EntryPoint
+		=> entryPoint;
 
-	public Vector2Int EntryPoint => entryPoint;
+	public Vector3 ToWorldPos(Vector2Int _gridPos)
+		=> Origin + new Vector3(_gridPos.x * tileSize, _gridPos.y * tileSize, 0f);
+
+	public bool CanShapeMove(PlayerShape _shape, Vector2Int _direction)
+	{
+		var targetPositions = _shape.GetNonOverlappingTargetPositions(_direction);
+
+		foreach(var pos in targetPositions)
+		{
+			if (Physics2D.OverlapCircle(ToWorldPos(pos), 0.4f * tileSize))
+				return false;
+		}
+
+		return true;
+	}
+
+	public T GetComponentAt<T>(Vector2Int _gridPos) where T : Component
+	{
+		var collider = Physics2D.OverlapCircle(ToWorldPos(_gridPos), 0.4f * tileSize);
+		if (!collider)
+			return default;
+
+		return collider.GetComponent<T>();
+	}
 
 	private void OnDrawGizmos()
 	{

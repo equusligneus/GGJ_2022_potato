@@ -79,7 +79,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myOriginOverride: {fileID: 1759753132643053082}
-  tileSize: {x: 1, y: 1}
+  tileSize: 1
   entryPoint: {x: 0, y: 0}
   isPlayerMoving: {fileID: 11400000, guid: 08bca08d619a51e48bbacc15f2f67543, type: 2}
   playerMoveTarget: {fileID: 11400000, guid: 62233ceda9c32c74b906a78a7ca10340, type: 2}

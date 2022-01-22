@@ -1,13 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class Player : MonoBehaviour
 {
 	[SerializeField] private InputActionAsset inputs;
-
-	[SerializeField] private GridSystem grid;
 
 	public InputAction MovementAction { get; private set; } = default;
 
@@ -41,10 +37,9 @@ public class Player : MonoBehaviour
 	public InputAction SwitchAction { get; private set; } = default;
 	public InputAction OpenMenuAction { get; private set; } = default;
 	public bool IsLocked { get; internal set; } = false;
-
 	public bool CanChangeDirection { get; private set; } = true;
 
-	public GridSystem Grid => grid;
+	public PlayerShape Shape { get; } = new PlayerShape();
 
 	private void Awake()
 	{
