@@ -10,6 +10,7 @@ public class WIn : MonoBehaviour
     
     public static int playerWinCondition;
     [SerializeField] public RuntimeInt levelWinCondition;
+    [SerializeField] public GameObject button;
     private void Start()
     {
         myCamera = Camera.main;
@@ -35,6 +36,15 @@ public class WIn : MonoBehaviour
             playerWinCondition = 0;
 
             Destroy(this.gameObject);
+        }
+    }
+
+    private void Update()
+    {
+        if (myPlayer == null)
+        {
+            myCamera.transform.position = new Vector3(0.0f, 0.0f, 0.0f);
+            button.SetActive(true);
         }
     }
 

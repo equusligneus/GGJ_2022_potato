@@ -4,15 +4,12 @@ using UnityEngine;
 
 public class Lose : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        
+        Debug.Log("This is the end, my friend!");
+        Destroy(collision.gameObject);
+
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

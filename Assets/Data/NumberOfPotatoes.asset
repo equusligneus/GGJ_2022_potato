@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 462a647a94e512840bdc71d88b452b98, type: 3}
   m_Name: NumberOfPotatoes
   m_EditorClassIdentifier: 
-  defaultValue: 0
+  defaultValue: 1
