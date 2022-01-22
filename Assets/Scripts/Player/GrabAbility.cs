@@ -42,14 +42,18 @@ public class GrabAbility : MonoBehaviour
 
     private void Drop()
 	{
+        Debug.Log("Dropping Item");
         player.Shape.Remove(grabbedObjectRef.Value);
         grabbedObjectRef.SetValue(default);
 	}
 
     private void PickUp(Grabbable _grabbable)
 	{
+        Debug.Log("Trying to grab Item");
         if (!_grabbable)
             return;
+
+        Debug.Log("Item grabbed");
 
         player.Shape.Add(_grabbable);
         grabbedObjectRef.SetValue(_grabbable);

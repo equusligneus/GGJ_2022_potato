@@ -4,6 +4,10 @@ using UnityEngine.InputSystem;
 public class Player : MonoBehaviour
 {
 	[SerializeField] private InputActionAsset inputs;
+	[SerializeField] private RuntimeFloat currentMoveSpeed;
+
+	[SerializeField] private float normalSpeed = 5f;
+	[SerializeField] private float dragSpeed = 2.5f;
 
 	public InputAction MovementAction { get; private set; } = default;
 
@@ -48,17 +52,31 @@ public class Player : MonoBehaviour
 			return;
 
 		var inGameMap = inputs.FindActionMap("InGame");
-		if(inGameMap != default)
+		if (inGameMap != default)
 		{
 			MovementAction = inGameMap.FindAction("Move");
 			InteractAction = inGameMap.FindAction("Interact");
 			SwitchAction = inGameMap.FindAction("Switch");
 		}
 		inputs.Enable();
+
+		SetNormalSpeed();
 	}
 
 	public bool CanMove(Vector2Int _direction)
 	{
 		return true;
+	}
+
+	public void SetNormalSpeed()
+	{
+		if (currentMoveSpeed)
+			currentMoveSpeed.SetValue(normalSpeed);
+	}
+
+	public void SetDragSpeed()
+	{
+		if (currentMoveSpeed)
+			currentMoveSpeed.SetValue(dragSpeed);
 	}
 }
