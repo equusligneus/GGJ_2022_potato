@@ -72,6 +72,9 @@ public class MovementAbility : MonoBehaviour, IMovable
 
 	private void SetMovement(Vector2Int _input)
 	{
+		if (_input == Vector2Int.zero)
+			return;
+
 		if (gridRef.Value.CanShapeMove(player.Shape, _input))
 			player.Shape.Move(_input);
 	}

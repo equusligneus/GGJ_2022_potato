@@ -20,6 +20,7 @@ public class AnimationAbility : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.LogFormat("isMoving: {0}", isMovingRef && isMovingRef.Value);
         animator.SetBool("isMoving", isMovingRef && isMovingRef.Value);
         animator.SetBool("isInteracting", isInteractingRef && isInteractingRef.Value);
         animator.SetInteger("HorizontalFacing", directionRef ? directionRef.Value.x : 0);
