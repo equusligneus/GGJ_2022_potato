@@ -1938,7 +1938,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1759753132862332468, guid: f3c805d17ed31e047b4848d6302a087f, type: 3}
       propertyPath: entryPoint.y
-      value: 7
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1759753132862332469, guid: f3c805d17ed31e047b4848d6302a087f, type: 3}
       propertyPath: myLevel
