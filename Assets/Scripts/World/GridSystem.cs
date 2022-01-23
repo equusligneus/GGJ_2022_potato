@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class GridSystem : MonoBehaviour
@@ -20,11 +21,14 @@ public class GridSystem : MonoBehaviour
 	public Vector3 ToWorldPos(Vector2Int _gridPos)
 		=> Origin + new Vector3(_gridPos.x * tileSize, _gridPos.y * tileSize, 0f);
 
+	public Vector2Int ToGridPos(Vector3 position)
+		=> tileSize > 0 ? new Vector2Int(Mathf.RoundToInt((position.x - Origin.x) / tileSize), Mathf.RoundToInt((position.y - Origin.y) / tileSize)) : Vector2Int.zero;
+
 	public bool CanShapeMove(PlayerShape _shape, Vector2Int _direction)
 	{
 		var targetPositions = _shape.GetNonOverlappingTargetPositions(_direction);
 
-		foreach(var pos in targetPositions)
+		foreach (var pos in targetPositions)
 		{
 			if (CollisionTest(pos))
 				return false;
@@ -32,6 +36,7 @@ public class GridSystem : MonoBehaviour
 
 		return true;
 	}
+
 
 	public T GetComponentAt<T>(Vector2Int _gridPos) where T : Component
 	{
@@ -65,9 +70,9 @@ public class GridSystem : MonoBehaviour
 		Gizmos.DrawSphere(ToWorldPos(entryPoint), 0.125f);
 
 		Gizmos.color = Color.grey;
-		for(int x = 0; x < fieldSize.x; ++x)
+		for (int x = 0; x < fieldSize.x; ++x)
 		{
-			for(int y = 0; y < fieldSize.y; ++y)
+			for (int y = 0; y < fieldSize.y; ++y)
 			{
 				Gizmos.DrawWireCube(ToWorldPos(new Vector2Int(x, y)), Vector3.one * tileSize);
 			}

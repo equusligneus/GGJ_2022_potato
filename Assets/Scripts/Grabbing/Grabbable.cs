@@ -8,11 +8,10 @@ public class Grabbable : Focusable, IMovable
 	[SerializeField] private GridSystem grid;
 	[SerializeField] private RuntimeFloat moveSpeedRef;
 
-	[SerializeField] private Vector2Int position;
 	private Vector2Int target;
 	private LevelStateWatcher watcher;
 
-	public Vector2Int Position => position;
+	public Vector2Int Position { get; private set; }
 
 	public bool IsMoving { get; private set; } = true;
 
@@ -31,6 +30,8 @@ public class Grabbable : Focusable, IMovable
 	private void Start()
 	{
 		watcher = GetComponent<LevelStateWatcher>();
+		if (grid)
+			Position = grid.ToGridPos(transform.position);
 	}
 
 	private void Update()
@@ -48,7 +49,7 @@ public class Grabbable : Focusable, IMovable
 		if (Vector3.Distance(transform.position, targetWorldPos) < Vector3.kEpsilon)
 		{
 			IsMoving = false;
-			position = target;
+			Position = target;
 		}
 	}
 }
