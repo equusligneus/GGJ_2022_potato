@@ -1037,7 +1037,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2291238123842595137, guid: 3fa02da46ff30f948b3d06dd7d34e3a0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.635693
+      value: 4.635693
       objectReference: {fileID: 0}
     - target: {fileID: 2291238123842595137, guid: 3fa02da46ff30f948b3d06dd7d34e3a0, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2563,6 +2563,75 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6486908263515679221, guid: aed3fe68c5a810b4eb68559d63c18046, type: 3}
   m_PrefabInstance: {fileID: 6861736309544372818}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &8262801111006360945
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 2352337522078600839}
+    m_Modifications:
+    - target: {fileID: 977925546274868089, guid: 570e71765c32118479d9e1cb56190790, type: 3}
+      propertyPath: m_Name
+      value: Sign_BP
+      objectReference: {fileID: 0}
+    - target: {fileID: 977925546274868094, guid: 570e71765c32118479d9e1cb56190790, type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 977925546274868094, guid: 570e71765c32118479d9e1cb56190790, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 4.008
+      objectReference: {fileID: 0}
+    - target: {fileID: 977925546274868094, guid: 570e71765c32118479d9e1cb56190790, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 7.993
+      objectReference: {fileID: 0}
+    - target: {fileID: 977925546274868094, guid: 570e71765c32118479d9e1cb56190790, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.5287852
+      objectReference: {fileID: 0}
+    - target: {fileID: 977925546274868094, guid: 570e71765c32118479d9e1cb56190790, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 977925546274868094, guid: 570e71765c32118479d9e1cb56190790, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 977925546274868094, guid: 570e71765c32118479d9e1cb56190790, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 977925546274868094, guid: 570e71765c32118479d9e1cb56190790, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 977925546274868094, guid: 570e71765c32118479d9e1cb56190790, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 977925546274868094, guid: 570e71765c32118479d9e1cb56190790, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 977925546274868094, guid: 570e71765c32118479d9e1cb56190790, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1659009830951922852, guid: 570e71765c32118479d9e1cb56190790, type: 3}
+      propertyPath: text
+      value: '''In [Mind] a bridge this river spans
+
+        In [Really] man just
+        scrapped those plans.
+
+        So how to cross and go your ways?
+
+        Focus
+        your will and then hit [Space]!'''
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 570e71765c32118479d9e1cb56190790, type: 3}
 --- !u!1001 &8738535906526857765
 PrefabInstance:
   m_ObjectHideFlags: 0
