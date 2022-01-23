@@ -135,18 +135,6 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4291594197442878051, guid: 40ae16fb24a609b4f82e9d2d752a9f1a, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 11.012425
-      objectReference: {fileID: 0}
-    - target: {fileID: 4291594197442878051, guid: 40ae16fb24a609b4f82e9d2d752a9f1a, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 8.991104
-      objectReference: {fileID: 0}
-    - target: {fileID: 4291594197442878051, guid: 40ae16fb24a609b4f82e9d2d752a9f1a, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.5940172
-      objectReference: {fileID: 0}
-    - target: {fileID: 4291594197442878051, guid: 40ae16fb24a609b4f82e9d2d752a9f1a, type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
@@ -424,6 +412,8 @@ MonoBehaviour:
   myLevel: 1
   currentLevel: {fileID: 11400000, guid: 31ad31c8cd3bd594e8a601420baa7e2d, type: 2}
   currentWorld: {fileID: 11400000, guid: 0704ec8ab93da814cbbd8d47a8dcf31b, type: 2}
+  defaultEnabledComponents: []
+  alternativeEnabledComponents: []
 --- !u!1001 &886217308
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -531,6 +521,8 @@ MonoBehaviour:
   myLevel: 2
   currentLevel: {fileID: 11400000, guid: 31ad31c8cd3bd594e8a601420baa7e2d, type: 2}
   currentWorld: {fileID: 11400000, guid: 0704ec8ab93da814cbbd8d47a8dcf31b, type: 2}
+  defaultEnabledComponents: []
+  alternativeEnabledComponents: []
 --- !u!61 &985182346
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -910,6 +902,14 @@ PrefabInstance:
     - target: {fileID: 2352337522078600839, guid: 38cf29c9219231b4db96a40bcd390698, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2352337522078600840, guid: 38cf29c9219231b4db96a40bcd390698, type: 3}
+      propertyPath: entryPoint.x
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2352337522078600840, guid: 38cf29c9219231b4db96a40bcd390698, type: 3}
+      propertyPath: entryPoint.y
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 2352337522078600842, guid: 38cf29c9219231b4db96a40bcd390698, type: 3}
       propertyPath: m_Name
