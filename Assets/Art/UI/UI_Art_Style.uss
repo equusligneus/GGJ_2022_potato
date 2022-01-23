@@ -55,4 +55,5 @@
     -unity-font-definition: none;
     -unity-text-align: middle-center;
     white-space: normal;
+    font-size: 16px;
 }

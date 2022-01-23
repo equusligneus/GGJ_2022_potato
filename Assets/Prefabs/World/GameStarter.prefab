@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9021035444043475166}
   - component: {fileID: 9021035444043475167}
+  - component: {fileID: 6845714309867785058}
   m_Layer: 0
   m_Name: GameStarter
   m_TagString: Untagged
@@ -47,3 +48,16 @@ MonoBehaviour:
   levelRef: {fileID: 11400000, guid: 31ad31c8cd3bd594e8a601420baa7e2d, type: 2}
   gameStateRef: {fileID: 11400000, guid: f4f78c36e60baac439f35a6b36b95e23, type: 2}
   startLevel: 1
+--- !u!114 &6845714309867785058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9021035444043475160}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a4e3ff49c5ccc4409c8589cea6fea0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameStateRef: {fileID: 11400000, guid: f4f78c36e60baac439f35a6b36b95e23, type: 2}

@@ -1,0 +1,9 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/Art/UI/UI_Art_Style.uss?fileID=7433441132597879392&amp;guid=1e42ff398bc90ee479d8e9b030087694&amp;type=3#UI_Art_Style" />
+    <ui:VisualElement style="justify-content: space-around; align-items: center; width: 100%; height: 100%;">
+        <ui:VisualElement class="sign_background sign_text">
+            <ui:Label text="Label" display-tooltip-when-elided="true" class="sign_text" />
+            <ui:Button text="Chicken out and look at clouds" display-tooltip-when-elided="true" name="btn_quit" class="sign_button" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

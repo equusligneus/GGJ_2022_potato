@@ -295,3 +295,4 @@ MonoBehaviour:
   menuOpenRef: {fileID: 11400000, guid: 9f3b4053122a51f4ba6334e29cd6f833, type: 2}
   input: {fileID: -944628639613478452, guid: ac5f7595071cfd042bcbfbf9ccdde185, type: 3}
   requirePauseRef: {fileID: 11400000, guid: ba500b3bebe73054db2ba6e8f45e1042, type: 2}
+  gameStateRef: {fileID: 11400000, guid: f4f78c36e60baac439f35a6b36b95e23, type: 2}
