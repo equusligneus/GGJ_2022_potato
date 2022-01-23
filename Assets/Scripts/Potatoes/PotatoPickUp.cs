@@ -5,6 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(LevelStateWatcher))]
 public class PotatoPickUp : MonoBehaviour
 {
+	[SerializeField] AudioSource myAudioSource;
     [SerializeField] RuntimeInt potatoCountRef;
 	LevelStateWatcher watcher;
 
@@ -14,6 +15,7 @@ public class PotatoPickUp : MonoBehaviour
 	private void Start()
 	{
 		watcher = GetComponent<LevelStateWatcher>();
+		myAudioSource = GetComponent<AudioSource>();
 
 		watcher.OnLevelChange += Watcher_OnLevelChange;
 	}
@@ -34,6 +36,7 @@ public class PotatoPickUp : MonoBehaviour
 		if (collision.gameObject.GetComponent<Player>())
 			potatoCountRef.SetValue(potatoCountRef.Value - 1);
 
+		myAudioSource.Play();
 		GetComponent<SpriteRenderer>().enabled = false;
 		GetComponent<Collider2D>().enabled = false;
 	}
