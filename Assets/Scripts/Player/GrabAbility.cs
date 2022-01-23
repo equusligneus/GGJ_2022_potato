@@ -3,22 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Player))]
-public class GrabAbility : MonoBehaviour
+public class GrabAbility : FocusAbility<Grabbable>
 {
-    [SerializeField] private RuntimeGrid currentGrid;
-    [SerializeField] private RuntimeInt2 currentPositionRef;
-    [SerializeField] private RuntimeInt2 currentDirectionRef;
-
     [SerializeField] private RuntimeGrabbable grabbedObjectRef;
-
-    private Player player;
 
     private bool HasObject => grabbedObjectRef.Value;
 
     // Start is called before the first frame update
-    void Start()
+    protected override void Start()
     {
-        player = GetComponent<Player>();
+        base.Start();
         if(player.InteractAction != default)
 			player.InteractAction.performed += InteractAction_performed;
     }
@@ -37,7 +31,7 @@ public class GrabAbility : MonoBehaviour
         if (HasObject)
             Drop();
         else
-            PickUp(currentGrid.Value.GetComponentAt<Grabbable>(currentPositionRef.Value + currentDirectionRef.Value));
+            PickUp();
 	}
 
     private void Drop()
@@ -47,15 +41,15 @@ public class GrabAbility : MonoBehaviour
         grabbedObjectRef.SetValue(default);
 	}
 
-    private void PickUp(Grabbable _grabbable)
+    private void PickUp()
 	{
         Debug.Log("Trying to grab Item");
-        if (!_grabbable)
+        if (!currentFocus)
             return;
 
         Debug.Log("Item grabbed");
 
-        player.Shape.Add(_grabbable);
-        grabbedObjectRef.SetValue(_grabbable);
+        player.Shape.Add(currentFocus);
+        grabbedObjectRef.SetValue(currentFocus);
 	}
 }

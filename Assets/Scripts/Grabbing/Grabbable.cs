@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(LevelStateWatcher))]
-public class Grabbable : MonoBehaviour, IMovable
+public class Grabbable : Focusable, IMovable
 {
 	[SerializeField] private GridSystem grid;
 	[SerializeField] private RuntimeFloat moveSpeedRef;

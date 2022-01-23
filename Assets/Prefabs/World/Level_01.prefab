@@ -1202,6 +1202,75 @@ Transform:
   m_Father: {fileID: 9078735264972851347}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &134013436511216996
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 9078735264972851347}
+    m_Modifications:
+    - target: {fileID: 977925546274868089, guid: 570e71765c32118479d9e1cb56190790, type: 3}
+      propertyPath: m_Name
+      value: Sign_BP
+      objectReference: {fileID: 0}
+    - target: {fileID: 977925546274868094, guid: 570e71765c32118479d9e1cb56190790, type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 977925546274868094, guid: 570e71765c32118479d9e1cb56190790, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 977925546274868094, guid: 570e71765c32118479d9e1cb56190790, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 977925546274868094, guid: 570e71765c32118479d9e1cb56190790, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 977925546274868094, guid: 570e71765c32118479d9e1cb56190790, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 977925546274868094, guid: 570e71765c32118479d9e1cb56190790, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 977925546274868094, guid: 570e71765c32118479d9e1cb56190790, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 977925546274868094, guid: 570e71765c32118479d9e1cb56190790, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 977925546274868094, guid: 570e71765c32118479d9e1cb56190790, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 977925546274868094, guid: 570e71765c32118479d9e1cb56190790, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 977925546274868094, guid: 570e71765c32118479d9e1cb56190790, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1659009830951922852, guid: 570e71765c32118479d9e1cb56190790, type: 3}
+      propertyPath: text
+      value: 'In mind a bridge this chasm spans
+
+        In real life they just ditched
+        the plans...
+
+        So how to get there and with haste?
+
+        The answer
+        lies in time and ''Space'' '
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 570e71765c32118479d9e1cb56190790, type: 3}
 --- !u!1001 &2238148664203187008
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1276,11 +1345,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1504609597745607310, guid: ac0863e15a7d9934c8c9467d313ffad4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 13.5
+      value: 11.25
       objectReference: {fileID: 0}
     - target: {fileID: 1504609597745607310, guid: ac0863e15a7d9934c8c9467d313ffad4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.25
+      value: -0.75
       objectReference: {fileID: 0}
     - target: {fileID: 1504609597745607310, guid: ac0863e15a7d9934c8c9467d313ffad4, type: 3}
       propertyPath: m_LocalPosition.z
