@@ -31,42 +31,14 @@ public class PostGameStateWatcher : MonoBehaviour
 					break;
 				case GameState.MainMenu:
 				case GameState.Quitting:
-					label.text = winning;
+					label.text = losing;
 					break;
 				default:
 					break;
 			}
 		}
+		StartCoroutine(SwitchRoutine(gameStateRef.Value));
     }
-
-	private void OnDestroy()
-	{
-		if (gameStateRef)
-			gameStateRef.OnValueChanged -= GameStateRef_OnValueChanged;
-	}
-
-	private void GameStateRef_OnValueChanged(GameState _value)
-	{
-		if (!gameStateRef)
-			return;
-
-		var val = gameStateRef.Value;
-		switch (val)
-		{
-			case GameState.Invalid:
-			case GameState.Running:
-				break;
-			case GameState.Winning:
-			case GameState.MainMenu:
-			case GameState.Quitting:
-				SceneManager.LoadScene(2);
-				break;
-			default:
-				break;
-		}
-
-		StartCoroutine(SwitchRoutine(val));
-	}
 
 	private IEnumerator SwitchRoutine(GameState _gameState)
 	{

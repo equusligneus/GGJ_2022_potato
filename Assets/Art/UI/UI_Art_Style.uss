@@ -20,7 +20,7 @@
 
 .text_caption {
     -unity-font: url('project://database/Assets/Art/Fonts/Gold_Box_8x16_Monospaced.ttf?fileID=12800000&guid=968cd0671ae21c143bf78dbdb49a9370&type=3#Gold_Box_8x16_Monospaced');
-    font-size: 20px;
+    font-size: 30px;
     -unity-text-align: upper-center;
     -unity-font-definition: none;
     justify-content: space-around;
@@ -44,16 +44,16 @@
     border-bottom-left-radius: 0;
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
-    padding-top: 2px;
-    padding-bottom: 2px;
+    padding-top: 15px;
+    padding-bottom: 15px;
 }
 
 .sign_text {
     color: rgb(106, 74, 49);
-    text-shadow: 0.5px 0.5px 0 rgb(79, 40, 0);
     -unity-font: url('project://database/Assets/Art/Fonts/Terminus_8x8_Monospaced.ttf?fileID=12800000&guid=e351b77f2f94d0e48815cb2dd54eeece&type=3#Terminus_8x8_Monospaced');
     -unity-font-definition: none;
     -unity-text-align: middle-center;
     white-space: normal;
-    font-size: 16px;
+    font-size: 20px;
+    -unity-paragraph-spacing: 72px;
 }

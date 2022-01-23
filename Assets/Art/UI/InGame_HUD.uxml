@@ -1,6 +1,7 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/Art/UI/UI_Art_Style.uss?fileID=7433441132597879392&amp;guid=1e42ff398bc90ee479d8e9b030087694&amp;type=3#UI_Art_Style" />
     <ui:VisualElement style="-unity-text-align: middle-right; align-items: center; flex-direction: row-reverse; background-image: none; color: rgb(255, 255, 255); -unity-font: url(&apos;project://database/Assets/Art/Fonts/Gold_Box_8x16_Monospaced.ttf?fileID=12800000&amp;guid=968cd0671ae21c143bf78dbdb49a9370&amp;type=3#Gold_Box_8x16_Monospaced&apos;);">
-        <ui:VisualElement style="background-image: url(&apos;project://database/Assets/Sprites/SPS_Rotating_Potato.png?fileID=-1264308892&amp;guid=73588e3c7ac7ee448a00d63503e9e4a2&amp;type=3#SPS_Rotating_Potato_0&apos;); width: 16px; height: 16px; align-items: flex-end; justify-content: center;" />
-        <ui:Label text="0" display-tooltip-when-elided="true" name="txt_potatoes" style="justify-content: center; align-items: flex-end; flex-direction: row-reverse; -unity-text-outline-width: 0;" />
+        <ui:VisualElement style="background-image: url(&apos;project://database/Assets/Sprites/SPS_Rotating_Potato.png?fileID=-1264308892&amp;guid=73588e3c7ac7ee448a00d63503e9e4a2&amp;type=3#SPS_Rotating_Potato_0&apos;); width: 32px; height: 32px; align-items: flex-end; justify-content: center;" />
+        <ui:Label text="0" display-tooltip-when-elided="true" name="txt_potatoes" class="text_caption" style="justify-content: center; align-items: flex-end; flex-direction: row-reverse; -unity-text-outline-width: 0;" />
     </ui:VisualElement>
 </ui:UXML>

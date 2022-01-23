@@ -132,7 +132,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 224973671}
-  - component: {fileID: 224973672}
+  - component: {fileID: 224973673}
+  - component: {fileID: 224973674}
   m_Layer: 0
   m_Name: Credits
   m_TagString: Untagged
@@ -155,21 +156,35 @@ Transform:
   m_Father: {fileID: 858391903}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &224973672
+--- !u!114 &224973673
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 224973670}
-  m_Enabled: 0
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d3ede2f9db18f14cb72ba68f2404bd6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  main: {fileID: 1900436271}
+  document: {fileID: 224973674}
+--- !u!114 &224973674
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 224973670}
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 19102, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: 
   m_EditorClassIdentifier: 
   m_PanelSettings: {fileID: 11400000, guid: 54008ab4bf23c77438f26102458b39f6, type: 2}
   m_ParentUI: {fileID: 0}
-  sourceAsset: {fileID: 9197481963319205126, guid: d7a68f097ca7cc743a54b85e9e3dc9e5, type: 3}
+  sourceAsset: {fileID: 9197481963319205126, guid: 72ae9cae5dc44c54b885336f90a515f9, type: 3}
   m_SortingOrder: 0
 --- !u!1 &858391900
 GameObject:
@@ -284,8 +299,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1900436270}
-  - component: {fileID: 1900436272}
   - component: {fileID: 1900436271}
+  - component: {fileID: 1900436272}
   m_Layer: 0
   m_Name: Main
   m_TagString: Untagged
@@ -321,6 +336,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputs: {fileID: -944628639613478452, guid: ac5f7595071cfd042bcbfbf9ccdde185, type: 3}
+  credits: {fileID: 224973673}
+  document: {fileID: 1900436272}
 --- !u!114 &1900436272
 MonoBehaviour:
   m_ObjectHideFlags: 0
