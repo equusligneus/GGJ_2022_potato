@@ -1,0 +1,56 @@
+.sign_background {
+    background-image: url('project://database/Assets/Sprites/SP_Sign.png?fileID=-1127857353&guid=f9d83a9348c548746bbd2d9c20e0be4e&type=3#SP_Sign_1');
+    width: auto;
+    height: auto;
+    justify-content: space-around;
+    align-items: center;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    -unity-slice-left: 50;
+    -unity-slice-top: 50;
+    -unity-slice-right: 50;
+    -unity-slice-bottom: 50;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.text_caption {
+    -unity-font: url('project://database/Assets/Art/Fonts/Gold_Box_8x16_Monospaced.ttf?fileID=12800000&guid=968cd0671ae21c143bf78dbdb49a9370&type=3#Gold_Box_8x16_Monospaced');
+    font-size: 20px;
+    -unity-text-align: upper-center;
+    -unity-font-definition: none;
+    justify-content: space-around;
+    color: rgb(106, 74, 49);
+    text-shadow: 1px 1px 0 rgb(79, 40, 0);
+}
+
+.sign_button {
+    color: rgb(106, 74, 49);
+    -unity-font: url('project://database/Assets/Art/Fonts/Gold_Box_8x16_Monospaced.ttf?fileID=12800000&guid=968cd0671ae21c143bf78dbdb49a9370&type=3#Gold_Box_8x16_Monospaced');
+    -unity-font-definition: none;
+    font-size: 25px;
+    -unity-text-align: middle-center;
+    text-shadow: 1px 1px 0 rgb(79, 40, 0);
+    background-color: rgba(0, 0, 0, 0);
+    border-left-width: 0;
+    border-right-width: 0;
+    border-top-width: 0;
+    border-bottom-width: 0;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.sign_text {
+    color: rgb(106, 74, 49);
+    text-shadow: 0.5px 0.5px 0 rgb(79, 40, 0);
+    -unity-font: url('project://database/Assets/Art/Fonts/Terminus_8x8_Monospaced.ttf?fileID=12800000&guid=e351b77f2f94d0e48815cb2dd54eeece&type=3#Terminus_8x8_Monospaced');
+    -unity-font-definition: none;
+    -unity-text-align: middle-center;
+    white-space: normal;
+}

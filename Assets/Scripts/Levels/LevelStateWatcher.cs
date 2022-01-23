@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class LevelStateWatcher : MonoBehaviour
@@ -6,6 +7,9 @@ public class LevelStateWatcher : MonoBehaviour
 	[SerializeField] private Level myLevel;
 	[SerializeField] private RuntimeLevel currentLevel;
 	[SerializeField] private RuntimeWorld currentWorld;
+
+	[SerializeField] private List<Behaviour> defaultEnabledComponents;
+	[SerializeField] private List<Behaviour> alternativeEnabledComponents;
 
 	public event Action<World> OnWorldChange;
 	public event Action<Level> OnLevelChange;
@@ -49,6 +53,18 @@ public class LevelStateWatcher : MonoBehaviour
 
 	private void Trigger(World _value)
 	{
+		foreach (var behaviour in defaultEnabledComponents)
+		{
+			if (behaviour)
+				behaviour.enabled = _value == World.Default;
+		}
+
+		foreach (var behaviour in alternativeEnabledComponents)
+		{
+			if (behaviour)
+				behaviour.enabled = _value == World.Alternative;
+		}
+
 		if (OnWorldChange != default)
 			OnWorldChange(_value);
 	}
