@@ -173,6 +173,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputs: {fileID: -944628639613478452, guid: ac5f7595071cfd042bcbfbf9ccdde185, type: 3}
+  menuOpenRef: {fileID: 11400000, guid: 9f3b4053122a51f4ba6334e29cd6f833, type: 2}
+  interactingRef: {fileID: 11400000, guid: 7a8b282dc7773c343b9407ee2d7c93ae, type: 2}
+  movingRef: {fileID: 11400000, guid: 08bca08d619a51e48bbacc15f2f67543, type: 2}
   currentMoveSpeed: {fileID: 11400000, guid: 358afaba36f7c91439f736705e9b4561, type: 2}
   normalSpeed: 5
   dragSpeed: 2.5
@@ -250,6 +253,7 @@ MonoBehaviour:
   currentPositionRef: {fileID: 11400000, guid: 9c882db4e00b9be4298da3f4f3a64413, type: 2}
   currentDirectionRef: {fileID: 11400000, guid: 244f1eef5f17524459612d4f61684ae1, type: 2}
   grabbedObjectRef: {fileID: 11400000, guid: c10cafd2a69e6d049b23cd176025d5a6, type: 2}
+  interactingRef: {fileID: 11400000, guid: 7a8b282dc7773c343b9407ee2d7c93ae, type: 2}
 --- !u!50 &1946161842
 Rigidbody2D:
   serializedVersion: 4
@@ -286,3 +290,4 @@ MonoBehaviour:
   currentGrid: {fileID: 11400000, guid: 562557d0f35d9c04292d8ff49c2dde4d, type: 2}
   currentPositionRef: {fileID: 11400000, guid: 9c882db4e00b9be4298da3f4f3a64413, type: 2}
   currentDirectionRef: {fileID: 11400000, guid: 244f1eef5f17524459612d4f61684ae1, type: 2}
+  interactingRef: {fileID: 11400000, guid: 7a8b282dc7773c343b9407ee2d7c93ae, type: 2}

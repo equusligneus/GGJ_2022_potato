@@ -9,7 +9,7 @@ public class WorldSwitchAbility : MonoBehaviour
 	private Player player;
 
 	public bool CanChangeWorld
-		=> currentWorldRef && isInTransitRef && !isInTransitRef.Value;
+		=> player.CanTurnOrInteract && currentWorldRef && isInTransitRef && !isInTransitRef.Value;
 
 	private void Start()
 	{
@@ -26,11 +26,6 @@ public class WorldSwitchAbility : MonoBehaviour
 
 	private void SwitchAction_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj)
 	{
-		if (!CanChangeWorld)
-			return;
-
-		// Do checking here!!!
-
 		SetWorld(currentWorldRef.Value == World.Default ? World.Alternative : World.Default);
 	}
 

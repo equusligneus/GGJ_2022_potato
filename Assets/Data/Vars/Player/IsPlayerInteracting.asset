@@ -10,6 +10,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8acc334a5847ea941a59f72f9c7df2a0, type: 3}
-  m_Name: IsPlayerGrabbing
+  m_Name: IsPlayerInteracting
   m_EditorClassIdentifier: 
   defaultValue: 0

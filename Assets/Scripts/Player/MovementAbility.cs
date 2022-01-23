@@ -9,6 +9,7 @@ public class MovementAbility : MonoBehaviour, IMovable
 
 	[SerializeField] private RuntimeBool isMovingRef;
 
+
 	[SerializeField] private RuntimeInt2 PositionRef;
 	[SerializeField] private RuntimeInt2 DirectionRef;
 	[SerializeField] private RuntimeInt2 MoveTargetRef;
@@ -16,7 +17,7 @@ public class MovementAbility : MonoBehaviour, IMovable
 	[SerializeField] private RuntimeFloat MoveSpeedRef;
 
 	private bool CanMoveAtAll
-		=> !player.IsLocked && gridRef && isMovingRef && PositionRef && DirectionRef && MoveTargetRef && MoveSpeedRef;
+		=> gridRef && isMovingRef && PositionRef && DirectionRef && MoveTargetRef && MoveSpeedRef;
 
 	public Vector2Int Position
 		=> PositionRef ? PositionRef.Value : Vector2Int.zero;
@@ -41,6 +42,9 @@ public class MovementAbility : MonoBehaviour, IMovable
 			return;
 		}
 
+		if (!player.CanReceiveInput)
+			return;
+
 		Vector2Int input = player.MoveInput;
 		SetDirection(input);
 		SetMovement(input);
@@ -61,7 +65,7 @@ public class MovementAbility : MonoBehaviour, IMovable
 
 	private void SetDirection(Vector2Int _input)
 	{
-		if (!player.CanChangeDirection)
+		if (!player.CanTurnOrInteract)
 			return;
 
 		if (_input == Vector2Int.zero)

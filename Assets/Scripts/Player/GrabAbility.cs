@@ -6,8 +6,12 @@ using UnityEngine;
 public class GrabAbility : FocusAbility<Grabbable>
 {
     [SerializeField] private RuntimeGrabbable grabbedObjectRef;
+    [SerializeField] private RuntimeBool interactingRef;
 
     private bool HasObject => grabbedObjectRef.Value;
+
+    private bool CanInteract
+        => player.CanReceiveInput && currentGrid && currentGrid.Value && grabbedObjectRef;
 
     // Start is called before the first frame update
     protected override void Start()
@@ -25,7 +29,7 @@ public class GrabAbility : FocusAbility<Grabbable>
 
 	private void InteractAction_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj)
 	{
-        if (!currentGrid || !currentGrid.Value || !grabbedObjectRef)
+        if (!CanInteract)
             return;
 
         if (HasObject)
@@ -39,6 +43,8 @@ public class GrabAbility : FocusAbility<Grabbable>
         Debug.Log("Dropping Item");
         player.Shape.Remove(grabbedObjectRef.Value);
         grabbedObjectRef.SetValue(default);
+        if (interactingRef)
+            interactingRef.SetValue(false);
 	}
 
     private void PickUp()
@@ -51,5 +57,7 @@ public class GrabAbility : FocusAbility<Grabbable>
 
         player.Shape.Add(currentFocus);
         grabbedObjectRef.SetValue(currentFocus);
-	}
+        if (interactingRef)
+            interactingRef.SetValue(true);
+    }
 }

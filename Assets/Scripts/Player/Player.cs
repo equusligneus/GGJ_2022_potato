@@ -4,8 +4,12 @@ using UnityEngine.InputSystem;
 public class Player : MonoBehaviour
 {
 	[SerializeField] private InputActionAsset inputs;
-	[SerializeField] private RuntimeFloat currentMoveSpeed;
 
+	[SerializeField] private RuntimeBool menuOpenRef;
+	[SerializeField] private RuntimeBool interactingRef;
+	[SerializeField] private RuntimeBool movingRef;
+
+	[SerializeField] private RuntimeFloat currentMoveSpeed;
 	[SerializeField] private float normalSpeed = 5f;
 	[SerializeField] private float dragSpeed = 2.5f;
 
@@ -40,8 +44,11 @@ public class Player : MonoBehaviour
 	public InputAction InteractAction { get; private set; } = default;
 	public InputAction SwitchAction { get; private set; } = default;
 	public InputAction OpenMenuAction { get; private set; } = default;
-	public bool IsLocked { get; internal set; } = false;
-	public bool CanChangeDirection { get; private set; } = true;
+
+	public bool CanReceiveInput
+		=> !(menuOpenRef && menuOpenRef.Value) && !(movingRef && movingRef.Value);
+	public bool CanTurnOrInteract
+		=> CanReceiveInput && !(interactingRef && interactingRef.Value);
 
 	public PlayerShape Shape { get; } = new PlayerShape();
 
