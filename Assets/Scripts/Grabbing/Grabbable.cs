@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(LevelStateWatcher))]
+[RequireComponent(typeof(LevelStateWatcher), typeof(BoxCollider2D))]
 public class Grabbable : Focusable, IMovable
 {
 	[SerializeField] private GridSystem grid;
@@ -31,7 +31,10 @@ public class Grabbable : Focusable, IMovable
 	{
 		watcher = GetComponent<LevelStateWatcher>();
 		if (grid)
+		{
 			Position = grid.ToGridPos(transform.position);
+			target = Position;
+		}
 	}
 
 	private void Update()
