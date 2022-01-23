@@ -3,6 +3,7 @@ using UnityEngine;
 public class GameStartScript : MonoBehaviour
 {
     public RuntimeLevel levelRef;
+    public RuntimeGameState gameStateRef;
     public Level startLevel;
 
     // Start is called before the first frame update
@@ -10,5 +11,8 @@ public class GameStartScript : MonoBehaviour
     {
         if (levelRef)
             levelRef.SetValue(startLevel);
+
+        if (gameStateRef)
+            gameStateRef.SetValue(GameState.Running);
     }
 }

@@ -6,7 +6,7 @@ using UnityEngine.UIElements;
 public class InGameMenu : InGameUI_Menu_Base
 {
 	public RuntimeBool requirePauseRef;
-	//public RuntimeGameState gameStateRef;
+	public RuntimeGameState gameStateRef;
 
 	protected override void SetupCallbacks()
 	{
@@ -54,12 +54,18 @@ public class InGameMenu : InGameUI_Menu_Base
 
 	private void OnBackToMenu()
 	{
+		if (gameStateRef)
+			gameStateRef.SetValue(GameState.MainMenu);
+
 		if (requirePauseRef)
 			requirePauseRef.SetValue(false);
 	}
 
 	private void OnQuit()
 	{
+		if (gameStateRef)
+			gameStateRef.SetValue(GameState.Quitting);
+
 		if (requirePauseRef)
 			requirePauseRef.SetValue(false);
 	}
