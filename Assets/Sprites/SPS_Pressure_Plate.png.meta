@@ -108,9 +108,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 49.5
-        width: 79
-        height: 49.5
+        y: 39
+        width: 70.666664
+        height: 39
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,10 +128,10 @@ TextureImporter:
       name: SPS_Pressure_Plate_1
       rect:
         serializedVersion: 2
-        x: 79
-        y: 49.5
-        width: 79
-        height: 49.5
+        x: 70
+        y: 39
+        width: 70.666664
+        height: 39
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -149,10 +149,10 @@ TextureImporter:
       name: SPS_Pressure_Plate_2
       rect:
         serializedVersion: 2
-        x: 158
-        y: 49.5
-        width: 79
-        height: 49.5
+        x: 140
+        y: 39
+        width: 70.666664
+        height: 39
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -171,9 +171,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 0.5
-        width: 79
-        height: 49.5
+        y: 0
+        width: 70.666664
+        height: 39
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -191,10 +191,10 @@ TextureImporter:
       name: SPS_Pressure_Plate_4
       rect:
         serializedVersion: 2
-        x: 79
-        y: 0.5
-        width: 79
-        height: 49.5
+        x: 70
+        y: 0
+        width: 70.666664
+        height: 39
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -212,10 +212,10 @@ TextureImporter:
       name: SPS_Pressure_Plate_5
       rect:
         serializedVersion: 2
-        x: 158
-        y: 0.5
-        width: 79
-        height: 49.5
+        x: 140
+        y: 0
+        width: 70.666664
+        height: 39
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

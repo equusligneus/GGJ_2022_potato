@@ -31,7 +31,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4291594197442878051}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4291594196786688742
 MonoBehaviour:
@@ -97,8 +97,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4291594197705753802}
-  - {fileID: 4291594197891430104}
   - {fileID: 4291594196786688745}
+  - {fileID: 4291594197891430104}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -241,13 +241,14 @@ GameObject:
   m_Component:
   - component: {fileID: 4291594197891430104}
   - component: {fileID: 4291594197891430105}
+  - component: {fileID: 8728955094559842186}
   m_Layer: 0
   m_Name: Pause
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &4291594197891430104
 Transform:
   m_ObjectHideFlags: 0
@@ -261,7 +262,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4291594197442878051}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4291594197891430105
 MonoBehaviour:
@@ -278,4 +279,19 @@ MonoBehaviour:
   m_PanelSettings: {fileID: 11400000, guid: 54008ab4bf23c77438f26102458b39f6, type: 2}
   m_ParentUI: {fileID: 0}
   sourceAsset: {fileID: 9197481963319205126, guid: 29bc8e5f644fa96468a019d3866220b4, type: 3}
-  m_SortingOrder: 1
+  m_SortingOrder: 2
+--- !u!114 &8728955094559842186
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4291594197891430107}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6886f57b0b98e14ab7a1b5cb633afc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  menuOpenRef: {fileID: 11400000, guid: 9f3b4053122a51f4ba6334e29cd6f833, type: 2}
+  input: {fileID: -944628639613478452, guid: ac5f7595071cfd042bcbfbf9ccdde185, type: 3}
+  requirePauseRef: {fileID: 11400000, guid: ba500b3bebe73054db2ba6e8f45e1042, type: 2}

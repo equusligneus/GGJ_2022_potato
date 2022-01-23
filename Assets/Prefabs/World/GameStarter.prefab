@@ -45,4 +45,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelRef: {fileID: 11400000, guid: 31ad31c8cd3bd594e8a601420baa7e2d, type: 2}
+  gameStateRef: {fileID: 11400000, guid: f4f78c36e60baac439f35a6b36b95e23, type: 2}
   startLevel: 1

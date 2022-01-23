@@ -59,7 +59,6 @@ public class Player : MonoBehaviour
 
 	private void Awake()
 	{
-		// solve all the input stuff here
 		if (!inputs)
 			return;
 
@@ -69,6 +68,7 @@ public class Player : MonoBehaviour
 			MovementAction = inGameMap.FindAction("Move");
 			InteractAction = inGameMap.FindAction("Interact");
 			SwitchAction = inGameMap.FindAction("Switch");
+			OpenMenuAction = inGameMap.FindAction("Pause");
 		}
 		inputs.Enable();
 
