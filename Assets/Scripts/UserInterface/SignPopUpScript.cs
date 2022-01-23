@@ -1,43 +1,60 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.UIElements;
 
-[RequireComponent(typeof(UIDocument))]
-public class SignPopUpScript : MonoBehaviour
+public class SignPopUpScript : InGameUI_Menu_Base
 {
-    public RuntimeString currentTextRef;
+	public RuntimeString currentTextRef;
+	private Label label;
+	private Button closeButton;
 
-    private UIDocument doc;
-    private Label label;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        doc = GetComponent<UIDocument>();
-        label = doc.rootVisualElement.Q<Label>("txt_sign");
-
-        if (currentTextRef)
-        {
-            currentTextRef.OnValueChanged += CurrentTextRef_OnValueChanged;
-            CurrentTextRef_OnValueChanged(currentTextRef.Value);
-        }
-        else
-            SetUIEnabled(false);
-    }
-
-	private void CurrentTextRef_OnValueChanged(string _value)
+	protected override void SetupReferences()
 	{
-        SetUIEnabled(!string.IsNullOrEmpty(_value));
-        if (label != default)
+		base.SetupReferences();
+		label = document.rootVisualElement.Q<Label>("txt_sign");
+		closeButton = document.rootVisualElement.Q<Button>("btn_close");
+	}
+
+	protected override void SetupCallbacks()
+	{
+		base.SetupCallbacks();
+		if (closeButton != default)
+			closeButton.clicked += CloseButton_Clicked;
+
+		if (currentTextRef)
 		{
-            Debug.LogFormat("Signpost label text: {0}, new text: {1}", label.text, _value);
-            label.text = _value;
+			currentTextRef.OnValueChanged += CurrentTextRef_OnValueChanged;
+			CurrentTextRef_OnValueChanged(currentTextRef.Value);
+		}
+		else
+		{
+			SetUIActive(false);
 		}
 	}
 
-    private void SetUIEnabled(bool _value)
+	protected override void CleanUpCallbacks()
 	{
-        doc.rootVisualElement.visible = _value;
-        //doc.enabled = ;
-    }
+		base.CleanUpCallbacks();
 
+		if (currentTextRef)
+			currentTextRef.OnValueChanged -= CurrentTextRef_OnValueChanged;
+	}
+	protected override void Close()
+	{
+		if (currentTextRef)
+			currentTextRef.SetValue("");
+		else
+			SetUIActive(false);
+	}
+
+	private void CloseButton_Clicked()
+		=> Close();
+
+
+	private void CurrentTextRef_OnValueChanged(string _value)
+	{
+		SetUIActive(!string.IsNullOrEmpty(_value));
+		if (label != default)
+			label.text = _value;
+	}
 }

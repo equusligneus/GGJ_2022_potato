@@ -61,6 +61,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18eeb2816f5902142aca9102979a281b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  menuOpenRef: {fileID: 11400000, guid: 9f3b4053122a51f4ba6334e29cd6f833, type: 2}
+  input: {fileID: -944628639613478452, guid: ac5f7595071cfd042bcbfbf9ccdde185, type: 3}
   currentTextRef: {fileID: 11400000, guid: 0841d63b3730be94e96978e6629bd078, type: 2}
 --- !u!1 &4291594197442878053
 GameObject:

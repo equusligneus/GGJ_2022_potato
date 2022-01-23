@@ -2,7 +2,8 @@
     <Style src="project://database/Assets/Art/UI/UI_Art_Style.uss?fileID=7433441132597879392&amp;guid=1e42ff398bc90ee479d8e9b030087694&amp;type=3#UI_Art_Style" />
     <ui:VisualElement style="width: 100%; height: 100%; align-items: center; justify-content: space-around;">
         <ui:VisualElement class="sign_background">
-            <ui:Label text="Testing this thing because we can&apos;t&#10;grgrgdgrgggrgrgrg&#10;grrgrgegergrgegrgreg&#10;ergergegregegergeg&#10;ergegergegrgegegergergegergegregrg" display-tooltip-when-elided="true" name="txt_sign" style="align-items: center; justify-content: center; -unity-font: url(&apos;project://database/Assets/Art/Fonts/Terminus_8x8_Monospaced.ttf?fileID=12800000&amp;guid=e351b77f2f94d0e48815cb2dd54eeece&amp;type=3#Terminus_8x8_Monospaced&apos;); -unity-font-definition: none; color: rgb(106, 74, 49); font-size: 12px; -unity-font-style: normal; width: auto; height: auto; flex-grow: 1; flex-shrink: 1; flex-wrap: wrap; white-space: normal; -unity-text-align: middle-center; text-shadow: 0.5px 0.5px 0 rgba(89, 62, 42, 255); -unity-text-outline-color: rgb(89, 62, 42); -unity-paragraph-spacing: 50px; letter-spacing: -3px;" />
+            <ui:Label text="Testing this thing because we can&apos;t&#10;grgrgdgrgggrgrgrg&#10;grrgrgegergrgegrgreg&#10;ergergegregegergeg&#10;ergegergegrgegegergergegergegregrg" display-tooltip-when-elided="true" name="txt_sign" class="sign_text" style="align-items: center; justify-content: center; width: auto; height: auto; flex-grow: 1; flex-shrink: 1; flex-wrap: wrap;" />
+            <ui:Button text="X" display-tooltip-when-elided="true" name="btn_close" class="sign_button" style="right: 50px; left: auto; position: absolute; top: 18px; width: 25px; height: 25px; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0;" />
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>
