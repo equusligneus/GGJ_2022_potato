@@ -9,6 +9,8 @@ public class Player : MonoBehaviour
 	[SerializeField] private RuntimeBool interactingRef;
 	[SerializeField] private RuntimeBool movingRef;
 
+	[SerializeField] private RuntimeWorld worldRef;
+
 	[SerializeField] private RuntimeFloat currentMoveSpeed;
 	[SerializeField] private float normalSpeed = 5f;
 	[SerializeField] private float dragSpeed = 2.5f;
@@ -49,6 +51,9 @@ public class Player : MonoBehaviour
 		=> !(menuOpenRef && menuOpenRef.Value) && !(movingRef && movingRef.Value);
 	public bool CanTurnOrInteract
 		=> CanReceiveInput && !(interactingRef && interactingRef.Value);
+
+	public bool CanFocus
+		=> !worldRef || worldRef.Value == World.Default;
 
 	public PlayerShape Shape { get; } = new PlayerShape();
 

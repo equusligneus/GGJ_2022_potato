@@ -176,6 +176,7 @@ MonoBehaviour:
   menuOpenRef: {fileID: 11400000, guid: 9f3b4053122a51f4ba6334e29cd6f833, type: 2}
   interactingRef: {fileID: 11400000, guid: 7a8b282dc7773c343b9407ee2d7c93ae, type: 2}
   movingRef: {fileID: 11400000, guid: 08bca08d619a51e48bbacc15f2f67543, type: 2}
+  worldRef: {fileID: 11400000, guid: 0704ec8ab93da814cbbd8d47a8dcf31b, type: 2}
   currentMoveSpeed: {fileID: 11400000, guid: 358afaba36f7c91439f736705e9b4561, type: 2}
   normalSpeed: 5
   dragSpeed: 2.5

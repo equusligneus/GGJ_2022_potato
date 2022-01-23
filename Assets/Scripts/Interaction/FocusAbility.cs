@@ -21,7 +21,7 @@ public class FocusAbility<T> : MonoBehaviour where T : Focusable
 
     protected virtual void Update()
     {
-        var focusable = currentGrid.Value.GetComponentAt<T>(currentPositionRef.Value + currentDirectionRef.Value);
+        var focusable = player.CanFocus ? currentGrid.Value.GetComponentAt<T>(currentPositionRef.Value + currentDirectionRef.Value) : default;
 
         if (focusable == currentFocus)
             return;
