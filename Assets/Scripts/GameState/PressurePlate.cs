@@ -10,21 +10,27 @@ public abstract class Switchable : MonoBehaviour
 public class PressurePlate : MonoBehaviour
 {
 	public List<Switchable> switchables;
+	private int pressCharges = 0;
 
 	private void OnTriggerEnter2D(Collider2D collision)
-		=> Switch(true);
+		=> SetPressed(true);
 
 	private void OnTriggerExit2D(Collider2D other)
-		=> Switch(false);
+		=> SetPressed(false);
 
-	private void Switch(bool _on)
+	private void SetPressed(bool _on)
 	{
+		pressCharges += _on ? 1 : -1;
+
+		if (pressCharges < 0 || pressCharges > 1)
+			return;
+
 		foreach (var s in switchables)
 		{
 			if (!s)
 				continue;
 
-			s.Switch(_on);
+			s.Switch(pressCharges > 0);
 		}
 	}
 }
